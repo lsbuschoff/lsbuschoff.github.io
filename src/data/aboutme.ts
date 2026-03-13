@@ -27,6 +27,5 @@ export const aboutMe: AboutMe = {
   email: "luca.schulze-buschoff@helmholtz-munich.de",
   imageUrl: "/square_512.jpeg",
   cvUrl: "/cv_lucamschulzebuschoff.pdf",
-  githubUsername: "lsbuschoff",
   institutionUrl: "https://hcai-munich.com/",
 };
