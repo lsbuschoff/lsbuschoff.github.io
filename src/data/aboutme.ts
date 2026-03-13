@@ -25,6 +25,7 @@ export const aboutMe: AboutMe = {
   description:
     "I am a third year PhD student in cognitive science and machine learning under the supervision of Dr. Eric Schulz in the Institute for <a href='https://hcai-munich.com/'>Human-Centered AI</a> at Helmholtz AI, Munich Germany.",
   email: "luca.schulze-buschoff@helmholtz-munich.de",
+  googleScholarUrl: "https://scholar.google.com/citations?user=K0uLclsAAAAJ&hl=de",
   imageUrl: "/square_512.jpeg",
   cvUrl: "/cv_lucamschulzebuschoff.pdf",
   institutionUrl: "https://hcai-munich.com/",
