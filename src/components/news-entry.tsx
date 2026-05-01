@@ -5,7 +5,7 @@ export function NewsEntry({ news }: { news: News }) {
   return (
     // Use flex row to keep everything on one line, 
     // and a small gap (e.g., gap-2) for minimal spacing
-    <div className="flex items-center gap-1 leading-none">
+    <div className="flex items-baseline gap-1 leading-none">
       <span className="text-xs text-zinc-500 whitespace-nowrap shrink-0">{news.date}</span>
       <span className="font-serif text-md">
         {news.link ? (
