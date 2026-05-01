@@ -15,7 +15,7 @@ export const publicationData: Publication[] = [
   // If you don't want to show publications, just make the array empty.
   {
     year: "2026",
-    conference: "Under Review",
+    conference: "Accepted at ICML",
     title: "Can vision language models learn intuitive physics from interaction?",
     authors: "L. M. Schulze Buschoff*, K. Voudouris*, C. Demircan, E. Schulz",
     paperUrl: "https://arxiv.org/abs/2602.06033",
