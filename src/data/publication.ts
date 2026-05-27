@@ -17,7 +17,7 @@ export const publicationData: Publication[] = [
     year: "2026",
     conference: "Accepted at ICML",
     title: "Can vision language models learn intuitive physics from interaction?",
-    authors: "L. M. Schulze Buschoff*, K. Voudouris*, C. Demircan, E. Schulz",
+    authors: "L. M. Schulze Buschoff, K. Voudouris, C. Demircan, E. Schulz",
     paperUrl: "https://arxiv.org/abs/2602.06033",
   },
   {
@@ -50,7 +50,7 @@ export const publicationData: Publication[] = [
   },
   {
     year: "2024",
-    conference: "Under Review",
+    conference: "Preprint",
     title: "Next state prediction gives rise to entangled, yet compositional representations of objects",
     authors: "T. Saanum, L. M. Schulze Buschoff, P. Dayan, E. Schulz",
     paperUrl: "https://arxiv.org/abs/2410.04940",
