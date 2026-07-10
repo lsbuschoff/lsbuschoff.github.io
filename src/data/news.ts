@@ -8,6 +8,11 @@ export interface News {
 export const newsData: News[] = [
   // If you don't want to show news, just make the array empty.
   {
+    date: "July 2026",
+    title: "",
+    description: "I am at ICML'26 in Seoul. Let me know if you want to talk!",
+  },
+  {
     date: "May 2026",
     title: "",
     description: "Our paper 'Can vision language models learn intuitive physics from interaction' was accepted to ICML'26.",
