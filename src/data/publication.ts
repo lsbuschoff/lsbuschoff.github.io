@@ -15,7 +15,14 @@ export const publicationData: Publication[] = [
   // If you don't want to show publications, just make the array empty.
   {
     year: "2026",
-    conference: "Accepted at ICML",
+    conference: "Preprint",
+    title: "Post-training makes large language models less human-like",
+    authors: "M. Binz, ..., L. M. Schulze Buschoff, ..., E. Schulz",
+    paperUrl: "https://arxiv.org/pdf/2605.07632",
+  },
+  {
+    year: "2026",
+    conference: "ICML",
     title: "Can vision language models learn intuitive physics from interaction?",
     authors: "L. M. Schulze Buschoff, K. Voudouris, C. Demircan, E. Schulz",
     paperUrl: "https://arxiv.org/abs/2602.06033",

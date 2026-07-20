@@ -3,6 +3,7 @@ export interface AboutMe {
   title: string;
   institution: string;
   description: string;
+  researchDescription?: string;
   email: string;
   imageUrl?: string;
   blogUrl?: string;
@@ -23,7 +24,9 @@ export const aboutMe: AboutMe = {
   institution: "Helmholtz AI, Munich",
   // Note that links work in the description
   description:
-    "I am a fourth year PhD student in cognitive science and machine learning under the supervision of Dr. Eric Schulz in the Institute for <a href='https://hcai-munich.com/'>Human-Centered AI</a> at Helmholtz AI, Munich Germany.",
+    "I am a fourth year PhD student in <b>cognitive science and machine learning</b> under the supervision of Eric Schulz in the Institute for <a href='https://hcai-munich.com/'>Human-Centered AI</a> at Helmholtz AI, Munich Germany.",
+  researchDescription:
+    "My research asks whether machines perceive and reason about the world the way people do &mdash; and how to close the gap where they do not. I use vision and vision&ndash;language models both as <b>instruments for understanding human visual cognition</b> and as <b>systems to be measured against it</b>, working toward a single model that captures not just human behavior but human perception and cognition across multiple levels.",
   email: "luca.schulze-buschoff@helmholtz-munich.de",
   googleScholarUrl: "https://scholar.google.com/citations?user=K0uLclsAAAAJ&hl=de",
   imageUrl: "/square_512.jpeg",

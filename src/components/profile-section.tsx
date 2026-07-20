@@ -1,12 +1,4 @@
 import Image from "next/image";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Twitter,
-  ArrowUpRight,
-  GraduationCap,
-} from "lucide-react";
 import { AboutMe } from "@/data/aboutme";
 
 interface ProfileSectionProps {
@@ -18,143 +10,83 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
     return null;
   }
 
+  const links: { label: string; href: string }[] = [
+    { label: aboutMe.email, href: `mailto:${aboutMe.email}` },
+  ];
+  if (aboutMe.googleScholarUrl) {
+    links.push({ label: "Google Scholar", href: aboutMe.googleScholarUrl });
+  }
+  if (aboutMe.cvUrl) {
+    links.push({ label: "CV", href: aboutMe.cvUrl });
+  }
+  if (aboutMe.blogUrl) {
+    links.push({ label: "Blog", href: aboutMe.blogUrl });
+  }
+  if (aboutMe.githubUsername) {
+    links.push({
+      label: "GitHub",
+      href: `https://github.com/${aboutMe.githubUsername}`,
+    });
+  }
+  if (aboutMe.twitterUsername) {
+    links.push({
+      label: "Twitter",
+      href: `https://twitter.com/${aboutMe.twitterUsername}`,
+    });
+  }
+  if (aboutMe.linkedinUsername) {
+    links.push({
+      label: "LinkedIn",
+      href: `https://www.linkedin.com/in/${aboutMe.linkedinUsername}`,
+    });
+  }
+
   return (
-    <div className="md:sticky top-12 flex flex-row-reverse md:flex-col gap-4 md:space-y-8">
+    <header className="mb-8">
       {aboutMe.imageUrl && (
-        <div className="w-1/3 md:w-full flex-shrink-0">
-          <div className="relative max-h-[45vh] md:w-[65%] aspect-[3/4]">
-            <Image
-              src={aboutMe.imageUrl}
-              alt={aboutMe.name}
-              fill
-              priority
-              className="object-cover rounded-xl"
-            />
-          </div>
-        </div>
+        <span className="block mb-4 w-20 h-20 relative rounded overflow-hidden md:absolute md:top-16 md:-left-20 md:mb-0">
+          <Image
+            src={aboutMe.imageUrl}
+            alt={aboutMe.name}
+            fill
+            priority
+            className="object-cover"
+          />
+        </span>
       )}
-      <div className="w-2/3 md:w-full">
-        <h1 className="font-serif text-3xl font-light tracking-wide mb-3">
-          {aboutMe.name}
-        </h1>
-        {aboutMe.altName && (
-          <p className="text-zinc-600 text-md leading-relaxed tracking-wide mb-6">
-            {aboutMe.altName}
-          </p>
-        )}
-        <p className="text-zinc-600 text-xs leading-relaxed tracking-wide uppercase mb-6">
-          {aboutMe.title}
-          <br />
-          {aboutMe.institutionUrl ? (
+      <h1 className="text-[12px] font-bold tracking-tight text-zinc-900 mb-6">
+        {aboutMe.name}
+      </h1>
+
+      {aboutMe.description && (
+        <p
+          className="mt-5 text-[12px] leading-[1.55] text-zinc-900 [&_a]:underline [&_a]:decoration-zinc-300 [&_a:hover]:decoration-zinc-900 [&_b]:font-bold [&_strong]:font-bold"
+          dangerouslySetInnerHTML={{ __html: aboutMe.description }}
+        />
+      )}
+
+      {aboutMe.researchDescription && (
+        <p
+          className="mt-[1.15rem] text-[12px] leading-[1.55] text-zinc-900 [&_a]:underline [&_a]:decoration-zinc-300 [&_a:hover]:decoration-zinc-900 [&_b]:font-bold [&_strong]:font-bold"
+          dangerouslySetInnerHTML={{ __html: aboutMe.researchDescription }}
+        />
+      )}
+
+      <p className="mt-6 text-[12px] text-zinc-500">
+        {links.map((link, i) => (
+          <span key={link.href}>
+            {i > 0 && <span className="mx-2 text-zinc-300">/</span>}
             <a
-              href={aboutMe.institutionUrl}
-              className="hover:text-zinc-900 transition-colors duration-300"
+              href={link.href}
               target="_blank"
               rel="noopener noreferrer"
+              className="underline decoration-zinc-300 hover:decoration-zinc-900 hover:text-zinc-900 transition-colors"
             >
-              {aboutMe.institution}
+              {link.label}
             </a>
-          ) : (
-            aboutMe.institution
-          )}
-        </p>
-        <div className="flex gap-6 mb-6">
-          {aboutMe.blogUrl && (
-            <a
-              href={aboutMe.blogUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-              />
-              <span className="tracking-wider uppercase">Blog</span>
-            </a>
-          )}
-          {aboutMe.cvUrl && (
-            <a
-              href={aboutMe.cvUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-              />
-              <span className="tracking-wider uppercase">CV</span>
-            </a>
-          )}
-        </div>
-        <div className="space-y-2">
-          <a
-            href={`mailto:${aboutMe.email}`}
-            className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Mail size={14} />
-            {aboutMe.email}
-          </a>
-          {aboutMe.googleScholarUrl && (
-            <>
-              <br />
-              <a
-                href={aboutMe.googleScholarUrl}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GraduationCap size={14} />
-                Google Scholar
-              </a>
-            </>
-          )}
-          {aboutMe.twitterUsername && (
-            <>
-              <br />
-              <a
-                href={`https://twitter.com/${aboutMe.twitterUsername}`}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter size={14} />@{aboutMe.twitterUsername}
-              </a>
-            </>
-          )}
-          {aboutMe.githubUsername && (
-            <>
-              <br />
-              <a
-                href={`https://github.com/${aboutMe.githubUsername}`}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github size={14} />
-                github.com/{aboutMe.githubUsername}
-              </a>
-            </>
-          )}
-          {aboutMe.linkedinUsername && (
-            <>
-              <br />
-              <a
-                href={`https://www.linkedin.com/in/${aboutMe.linkedinUsername}`}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin size={14} />
-                linkedin.com/in/{aboutMe.linkedinUsername}
-              </a>
-            </>
-          )}
-        </div>
-      </div>
-    </div>
+          </span>
+        ))}
+      </p>
+    </header>
   );
 }

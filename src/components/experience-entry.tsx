@@ -2,40 +2,29 @@ import { Experience } from "@/data/experience";
 
 export function ExperienceEntry({ experience }: { experience: Experience }) {
   return (
-    <div className="grid grid-cols-4 gap-x-2">
-      <span className="text-xs text-zinc-500 mt-1">{experience.date}</span>
-      <div className="col-span-3 flex flex-col">
-        <h3 className="text-base font-serif">
-          {experience.title} —{" "}
-          {experience.companyUrl ? (
-            <a
-              href={experience.companyUrl}
-              className="hover:text-zinc-600 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {experience.company}
-            </a>
-          ) : (
-            experience.company
-          )}
-        </h3>
-        {experience.advisor && (
-          <p className="text-sm text-zinc-600 leading-relaxed italic mt-2">
-            Advisor: {experience.advisor}
-          </p>
-        )}
-        {experience.manager && (
-          <p className="text-sm text-zinc-600 leading-relaxed italic mt-2">
-            Manager: {experience.manager}
-          </p>
+    <li className="flex items-baseline gap-3.5 mb-[0.55rem]">
+      <span className="text-[0.85rem] text-zinc-500 whitespace-nowrap shrink-0 w-24">
+        {experience.date}
+      </span>
+      <span className="text-[0.97rem] text-zinc-900">
+        <span className="font-semibold">{experience.title}</span>
+        {", "}
+        {experience.companyUrl ? (
+          <a
+            href={experience.companyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-zinc-300 hover:decoration-zinc-900"
+          >
+            {experience.company}
+          </a>
+        ) : (
+          experience.company
         )}
         {experience.description && (
-          <p className="text-sm text-zinc-600 leading-relaxed mt-2">
-            {experience.description}
-          </p>
+          <span className="block text-zinc-500">{experience.description}</span>
         )}
-      </div>
-    </div>
+      </span>
+    </li>
   );
 }

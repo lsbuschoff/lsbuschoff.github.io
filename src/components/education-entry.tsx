@@ -2,36 +2,34 @@ import { Education } from "@/data/education";
 
 export function EducationEntry({ education }: { education: Education }) {
   return (
-    <div>
-      <div className="grid grid-cols-4 gap-x-2 mb-2">
-        <span className="text-xs text-zinc-500 mt-1">{education.year}</span>
-        <div className="col-span-3">
-          <h3 className="text-base mb-1 font-serif">{education.institution}</h3>
-          <p className="text-sm text-zinc-600">{education.degree}</p>
-          {education.advisor && (
-            <p className="text-sm text-zinc-500 mt-2 italic">
-              Advisor: {education.advisor}
-            </p>
-          )}
-          {education.thesis && (
-            <p className="text-sm text-zinc-500 mt-2 italic">
-              Thesis:{" "}
-              {education.thesisUrl ? (
-                <a
-                  href={education.thesisUrl}
-                  className="hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {education.thesis}
-                </a>
-              ) : (
-                education.thesis
-              )}
-            </p>
-          )}
-        </div>
-      </div>
-    </div>
+    <li className="flex items-baseline gap-3.5 mb-[0.55rem]">
+      <span className="text-[0.85rem] text-zinc-500 whitespace-nowrap shrink-0 w-24">
+        {education.year}
+      </span>
+      <span className="text-[0.97rem] text-zinc-900">
+        <span className="font-semibold">{education.degree}</span>
+        {", "}
+        {education.institution}
+        {education.advisor && (
+          <span className="text-zinc-500"> · advisor: {education.advisor}</span>
+        )}
+        {education.thesis && (
+          <span className="block text-zinc-500 italic">
+            {education.thesisUrl ? (
+              <a
+                href={education.thesisUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-zinc-300 hover:decoration-zinc-900"
+              >
+                {education.thesis}
+              </a>
+            ) : (
+              education.thesis
+            )}
+          </span>
+        )}
+      </span>
+    </li>
   );
 }
