@@ -6,7 +6,7 @@ export function PublicationEntry({
   publication: Publication;
 }) {
   return (
-    <li className="mb-4 leading-[1.45] text-[12px]">
+    <li className="mb-4 leading-[1.45] text-[14px]">
       <span className="font-semibold">
         {publication.paperUrl ? (
           <a

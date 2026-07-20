@@ -4,8 +4,6 @@ import { PublicationEntry } from "@/components/publication-entry";
 import { publicationData } from "@/data/publication";
 import { ProfileSection } from "@/components/profile-section";
 import { aboutMe } from "@/data/aboutme";
-import { NewsEntry } from "@/components/news-entry";
-import { newsData } from "@/data/news";
 import { ExperienceEntry } from "@/components/experience-entry";
 import { experienceData } from "@/data/experience";
 import { PortfolioEntry } from "@/components/portfolio-entry";
@@ -23,24 +21,11 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative max-w-[680px] mx-auto px-6 pt-16 pb-20">
+      <div className="relative max-w-[860px] mx-auto px-6 pt-16 pb-20">
         <ProfileSection aboutMe={aboutMe} />
 
         {sectionOrder.map((sectionName) => {
           switch (sectionName) {
-            case Section.News:
-              return (
-                newsData.length > 0 && (
-                  <section key={sectionName}>
-                    <SectionHeading>News</SectionHeading>
-                    <ul className="list-none m-0 p-0">
-                      {newsData.map((news, index) => (
-                        <NewsEntry key={index} news={news} />
-                      ))}
-                    </ul>
-                  </section>
-                )
-              );
             case Section.Publication:
               return (
                 publicationData.length > 0 && (

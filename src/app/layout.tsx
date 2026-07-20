@@ -6,9 +6,6 @@ import { customMetadata } from "@/data/title-description";
 export const metadata: Metadata = {
   title: customMetadata.title || aboutMe.name,
   description: customMetadata.description || aboutMe.description,
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
