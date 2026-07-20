@@ -44,7 +44,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
   return (
     <header className="mb-8">
       {aboutMe.imageUrl && (
-        <span className="block mb-4 w-24 h-24 relative rounded overflow-hidden min-[1080px]:absolute min-[1080px]:top-16 min-[1080px]:-left-24 min-[1080px]:mb-0">
+        <span className="block mb-4 w-24 h-24 relative rounded overflow-hidden min-[1000px]:absolute min-[1000px]:top-16 min-[1000px]:-left-24 min-[1000px]:mb-0">
           <Image
             src={aboutMe.imageUrl}
             alt={aboutMe.name}
@@ -54,25 +54,25 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
           />
         </span>
       )}
-      <h1 className="text-[14px] font-bold tracking-tight text-zinc-900 mb-6">
+      <h1 className="text-[13px] font-bold tracking-tight text-zinc-900 mb-6">
         {aboutMe.name}
       </h1>
 
       {aboutMe.description && (
         <p
-          className="mt-5 text-[14px] leading-[1.55] text-zinc-900 [&_a]:underline [&_a]:decoration-zinc-300 [&_a:hover]:decoration-zinc-900 [&_b]:font-bold [&_strong]:font-bold"
+          className="mt-5 text-[13px] leading-[1.55] text-zinc-900 [&_a]:underline [&_a]:decoration-zinc-300 [&_a:hover]:decoration-zinc-900 [&_b]:font-bold [&_strong]:font-bold"
           dangerouslySetInnerHTML={{ __html: aboutMe.description }}
         />
       )}
 
       {aboutMe.researchDescription && (
         <p
-          className="mt-[1.15rem] text-[14px] leading-[1.55] text-zinc-900 [&_a]:underline [&_a]:decoration-zinc-300 [&_a:hover]:decoration-zinc-900 [&_b]:font-bold [&_strong]:font-bold"
+          className="mt-[1.15rem] text-[13px] leading-[1.55] text-zinc-900 [&_a]:underline [&_a]:decoration-zinc-300 [&_a:hover]:decoration-zinc-900 [&_b]:font-bold [&_strong]:font-bold"
           dangerouslySetInnerHTML={{ __html: aboutMe.researchDescription }}
         />
       )}
 
-      <p className="mt-6 text-[14px] text-zinc-500">
+      <p className="mt-6 text-[13px] text-zinc-500">
         {links.map((link, i) => (
           <span key={link.href}>
             {i > 0 && <span className="mx-2 text-zinc-300">/</span>}

@@ -21,7 +21,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative max-w-[860px] mx-auto px-6 pt-16 pb-20">
+      <div className="relative max-w-[800px] mx-auto px-6 pt-16 pb-20">
         <ProfileSection aboutMe={aboutMe} />
 
         {sectionOrder.map((sectionName) => {
