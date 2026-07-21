@@ -21,7 +21,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative max-w-[800px] mx-auto px-6 pt-16 pb-20">
+      <div className="relative max-w-[900px] mx-auto px-6 pt-16 pb-20">
         <ProfileSection aboutMe={aboutMe} />
 
         {sectionOrder.map((sectionName) => {
@@ -29,7 +29,7 @@ export default function Home() {
             case Section.Publication:
               return (
                 publicationData.length > 0 && (
-                  <section key={sectionName} className="mt-[4.5rem]">
+                  <section key={sectionName} className="mt-[2.5rem]">
                     <ul className="list-none m-0 pt-7 border-t border-zinc-200">
                       {publicationData.map((publication, index) => (
                         <PublicationEntry
