@@ -28,7 +28,7 @@ export const aboutMe: AboutMe = {
   researchDescription:
     "My research asks whether machines perceive and reason about the world the way people do &mdash; and how to close the gap where they do not. I use vision and vision&ndash;language models both as <b>instruments for understanding human visual cognition</b> and as <b>systems to be measured against it</b>, working toward a single model that captures human visual perception and cognition across multiple levels.",
   email: "luca.schulze-buschoff@helmholtz-munich.de",
-  googleScholarUrl: "https://scholar.google.com/citations?user=K0uLclsAAAAJ&hl=de",
+  googleScholarUrl: "https://scholar.google.com/citations?user=K0uLclsAAAAJ&hl=en",
   imageUrl: "/square_512.jpeg",
   cvUrl: "/cv.pdf",
   institutionUrl: "https://hcai-munich.com/",
