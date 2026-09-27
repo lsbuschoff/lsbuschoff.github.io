@@ -16,6 +16,13 @@ export const publicationData: Publication[] = [
   {
     year: "2026",
     conference: "Preprint",
+    title: "CogGym: Towards Large-Scale Comparative Evaluation of Human and Machine Cognition",
+    authors: "L. Ying, ..., L. M. Schulze Buschoff, ..., K. Smith, J. B. Tenenbaum",
+    paperUrl: "https://arxiv.org/pdf/2609.21259",
+  },
+  {
+    year: "2026",
+    conference: "Preprint",
     title: "Post-training makes large language models less human-like",
     authors: "M. Binz, ..., L. M. Schulze Buschoff, ..., E. Schulz",
     paperUrl: "https://arxiv.org/pdf/2605.07632",
